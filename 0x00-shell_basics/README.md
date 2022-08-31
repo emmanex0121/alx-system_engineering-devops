@@ -16,3 +16,5 @@
 
 8-firstdelete - deletes betty
 
+9-firstdirdeletion - deletes my_first_directory
+
