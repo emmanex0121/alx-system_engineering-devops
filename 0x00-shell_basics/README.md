@@ -24,3 +24,4 @@
 
 12-file_type - Tells the file type od iamafile
 
+13-symbolic_link - Creates a symbolic link __ls__ to /bin/ls
