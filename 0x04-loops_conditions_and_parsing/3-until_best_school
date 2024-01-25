@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Bash Script by Phoenix
+
+num=10
+until [ "$num" = 0 ]
+do
+	echo "Best School"
+	((num--))
+done
