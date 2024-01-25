@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+for a in {1..10}
+do
+	if [ "$a" = 4 ] || [ "$a" = 6 ] || [ "$a" = 10 ]
+	then
+		echo "Hello World"
+	else
+		echo "Welcome"
+	fi
+done

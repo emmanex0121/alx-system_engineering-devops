@@ -1,0 +1,48 @@
+#!/bin/bash
+
+a=24
+b=47
+
+# Test 1
+if [[ $a -eq 24  &&  "$b" -eq 47 ]]
+then
+	echo "Test #1 Success."
+else
+	echo "Test #1 fails."
+fi
+
+# Test 2
+if [ $a -eq 98 ] || [ $b -eq 47 ]
+then
+	echo "Test #2 succeeds."
+else
+	echo "Test #2 fails."
+fi
+
+# Test 3
+if [ $a -eq 24 -a $b -eq 47 ]
+then
+	echo "Test #3 succeeds."
+else
+	echo "Test #3 fails."
+fi
+
+# Test 4
+if [ "$a" -eq 98 -o "$b" -eq 47 ]
+then
+	echo "Test #4 succeeds."
+else
+	echo "Test #4 fails."
+fi
+
+# Test 5
+a=rhino
+b=crocodile
+
+if [ $a = rhino ] && [ $b = crocodile ]
+then
+	echo "Test #5 succeeds."
+else
+	echo "Test #5 fails."
+fi
+

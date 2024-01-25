@@ -1,0 +1,4 @@
+#!/usr/bin/env perl
+use warnings;
+print "Hello " x 5;
+print "\n";
