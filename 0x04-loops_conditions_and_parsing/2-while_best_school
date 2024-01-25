@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Bash Program By Phoenix
+
+end=0
+num=10
+while [ "$num" -gt "$end" ]
+do
+	echo "Best School"
+	((num-=1))
+done
