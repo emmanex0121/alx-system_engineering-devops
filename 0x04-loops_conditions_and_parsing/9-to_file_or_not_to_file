@@ -18,6 +18,6 @@ else
 
 	if [ -f "$FILE" ]
 	then
-		echo "$FILE file is a regular file"
+		echo "$FILE is a regular file"
 	fi
 fi
