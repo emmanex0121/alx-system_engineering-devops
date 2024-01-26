@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash Script By Phoenix
+
+myList=$(ls)
+for stuff in $myList
+do
+	echo "$stuff" | cut -d '-' -f 2
+done
