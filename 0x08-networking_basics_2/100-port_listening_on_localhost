@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Bash Script By Phoenix
 # This script makes localhost listen on port 98
 
 nc -l localhost 98
