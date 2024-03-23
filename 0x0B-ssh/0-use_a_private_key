@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/school
 ssh-copy-id ubuntu@54.196.42.238
 ssh -i ~/.ssh/school ubuntu@54.196.42.238
