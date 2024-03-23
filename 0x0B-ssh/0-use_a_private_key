@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-server_ip=54.196.42.238
-ssh_command="ssh -i ~/.ssh/school ubuntu@$server_ip"
-$ssh_command
+ssh -i ~/.ssh/school ubuntu@54.196.42.238
