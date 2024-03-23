@@ -1,4 +1,6 @@
+#!/usr/bin/pup
 # This manifest creates a file at /tmp
+
 file { '/tmp/school':
     ensure  => 'file',
     owner   => 'www-data',
