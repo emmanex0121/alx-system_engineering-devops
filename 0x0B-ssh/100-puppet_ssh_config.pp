@@ -1,3 +1,5 @@
+#!/usr/bin/pup
+
 file { '/home/phoenix/.ssh/config':
     ensure  => file,
     owner   => 'phoenix',
