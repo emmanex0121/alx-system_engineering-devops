@@ -1,5 +1,3 @@
-#!/usr/bin/env pup
-
 file { '/home/phoenix/.ssh/config':
     ensure  => file,
     owner   => 'phoenix',
