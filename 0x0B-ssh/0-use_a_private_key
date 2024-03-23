@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/school
-ssh-copy-id ubuntu@54.196.42.238
-ssh -i ~/.ssh/school ubuntu@54.196.42.238
+# Bash script that uses ssh to connect to your server using the private
+# key ~/.ssh/school with the user ubuntu
+ssh ubuntu@54.196.42.238 -i ~/.ssh/school
