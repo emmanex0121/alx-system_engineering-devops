@@ -34,14 +34,14 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend oluwayemisidev-tech-frontend
+frontend phxkheed-tech-frontend
     bind *:80
-    default_backend oluwayemisidev-tech-backend
+    default_backend phxkheed-tech-backend
 
-backend oluwayemisidev-tech-backend
+backend phxkheed-tech-backend
     balance roundrobin
-    server 462578-web-01 18.206.192.4:80 check
-    server 462578-web-02 34.204.101.52:80 check
+    server 142286-web-01 54.196.42.238:80 check
+    server 142286-web-02 54.173.184.128:80 check
 "
 
 # shellcheck disable=SC2154
