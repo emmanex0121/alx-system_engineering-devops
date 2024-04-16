@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo -e "Intsalling ufw...\n"
+sudo apt-get update
+sudo apt-get install ufw
+
+echo -e "\nEnabling and CONFIGURING...\n"
+sudo ufw enable # enables and loads default - deny incoming, allow outgoing
+
+sudo ufw default deny incoming # change default to  deny all incoming traffic
+
+sudo ufw allow 443/tcp # allow HTTPS ssl traffic
+sudo ufw allow 80/tcp  # allow HTTP traffic
+sudo ufw allow 22/tcp  # allow ssh traffic
+
+sudo ufw reload # reloads ufw and commit 
+echo -e "Configuration Complete\n"
