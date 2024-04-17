@@ -1,4 +1,4 @@
-# Mysql Master-Slave Database setup on server
+# Mysql Master-Slave Database setup on web server
 Setting up the web-01 and web-02 to have a master-slave database setup
 
 ## Installing MySql 5.7 distribution
@@ -53,5 +53,17 @@ CREATE USER 'user_name'@'host_name' IDENTIFIED BY 'password';
 ```
 GRANT REPLICATION CLIENT ON *.* TO 'user_name'@'host_name';
 ```
+`commit changes, apply and exit`
+```
+FLUSH PRIVILEGES;
+```
+```
+exit
+```
+`Check status and priviledges of newly created userusing the new user`
+```
+mysql -u user_name -p -e "SHOW GRANTS FOR 'user_name'@'localhost'"
+```
+
 
 ### Emmanuel Nwachukwu [<emmax0121@gmail.com>]
