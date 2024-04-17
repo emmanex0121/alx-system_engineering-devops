@@ -42,9 +42,9 @@ sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engin
 
 
 `login to mysql with root using the password set at setup`
-
+```
 mysql -u root -p
-
+```
 `Creates user and assign a password`
 ```
 CREATE USER 'user_name'@'host_name' IDENTIFIED BY 'password';
