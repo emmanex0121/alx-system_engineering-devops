@@ -33,7 +33,9 @@ means:
 
 Then you will have to use this command to fetch the repo and install it as well.
 
-```sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 && sudo chmod +x mysql57 &&  sudo ./mysql57```
+```
+sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 && sudo chmod +x mysql57 &&  sudo ./mysql57
+```
 
 
 ## Creating a new user, setting a password and assigning the permision to check primary/replica status
