@@ -175,11 +175,12 @@ exit
         > "relay-log = /var/log/mysql/mysql-relay-bin.log"
         > "log_bin = /var/log/mysql/mysql-bin.log"
         > "binlog_do_db = tyrell_corp"
+
         where tyrell_corp is the database_name
     - restart mysql service
-        ```
+	```
 	sudo service mysql restart
-        sudo service mysql status
+	sudo service mysql status
 	```
     - configure the replica master settings using values from web-01
         ```
