@@ -199,22 +199,22 @@ exit
 	> MASTER_LOG_POS=master-status-position
 
     - start slave mysql
-        ```
+	```
 	START SLAVE;
 	```
     - verify that slave is up and running
-        ```
+	```
 	SHOW SLAVE STATUS;
 	```
-        `OR`
+	`OR`
 	```
-        SHOW SLAVE STATUS\G;
+	SHOW SLAVE STATUS\G;
 	```
     - confirm that `slave IO running` and `slave SQL running` is set to `yes`
     - restart mysql service
-        ```
+	```
 	sudo mysql service restart
-        sudo mysql service status
+	sudo mysql service status
 	```
 
 ### Emmanuel Nwachukwu [<emmax0121@gmail.com>]
