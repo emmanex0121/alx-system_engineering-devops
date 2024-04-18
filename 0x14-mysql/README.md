@@ -146,12 +146,12 @@ exit
 - edit mysql config file
     sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
   - comment out the line "bind-address"
-  - add this lines:
+  - add this lines without the quotes:
     > "log_bin = /var/log/mysql/mysql-bin.log"
 
-    > "server-id = 1"
+      "server-id = 1"
 
-    > "binlog_do_db = tyrell_corp"
+      "binlog_do_db = tyrell_corp"
 - restart mysql service
     ```
     sudo service mysql restart
