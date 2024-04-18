@@ -183,7 +183,7 @@ exit
 	sudo service mysql status
 	```
     - configure the replica master settings using values from web-01
-        ```
+	```
 	CHANGE MASTER TO MASTER_HOST='100.25.16.150', MASTER_USER='replica_user', MASTER_PASSWORD='1352', MASTER_LOG_FILE='mysql-bin.000002', MASTER_LOG_POS=154;
 	```
         
