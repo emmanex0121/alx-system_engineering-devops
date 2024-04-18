@@ -60,7 +60,7 @@ FLUSH PRIVILEGES;
 ```
 exit
 ```
-`Check status and priviledges of newly created userusing the new user`
+`Check status and priviledges of newly created user using the new user`
 ```
 mysql -u user_name -p -e "SHOW GRANTS FOR 'user_name'@'localhost'"
 ```
