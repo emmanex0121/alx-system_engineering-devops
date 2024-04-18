@@ -165,20 +165,26 @@ exit
     ```
 
 ## login to web-02/replica server
-## Open mysql config file
-sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-    - comment out bind-address
-    - add lines
-        "server-id = 2"
-        "relay-log = /var/log/mysql/mysql-relay-bin.log"
-        "log_bin = /var/log/mysql/mysql-bin.log"
-        "binlog_do_db = tyrell_corp"
+- Open mysql config file
+	```
+	sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+	```
+    - comment out "bind-address"
+    - add lines:
+        > "server-id = 2"
+        > "relay-log = /var/log/mysql/mysql-relay-bin.log"
+        > "log_bin = /var/log/mysql/mysql-bin.log"
+        > "binlog_do_db = tyrell_corp"
         where tyrell_corp is the database_name
     - restart mysql service
-        sudo service mysql restart
+        ```
+	sudo service mysql restart
         sudo service mysql status
+	```
     - configure the replica master settings using values from web-01
-        CHANGE MASTER TO MASTER_HOST='100.25.16.150', MASTER_USER='replica_user', MASTER_PASSWORD='1352', MASTER_LOG_FILE='mysql-bin.000002', MASTER_LOG_POS=154;
+        ```
+	CHANGE MASTER TO MASTER_HOST='100.25.16.150', MASTER_USER='replica_user', MASTER_PASSWORD='1352', MASTER_LOG_FILE='mysql-bin.000002', MASTER_LOG_POS=154;
+	```
         
         MASTER_HOST='web-01 ipaddress'
         MASTER_USER='replica_user' from web-01
@@ -186,14 +192,22 @@ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
         MASTER_LOG_FILE='master-status-file'
         MASTER_LOG_POS=master-status-position
     - start slave mysql
-        START SLAVE;
+        ```
+	START SLAVE;
+	```
     - verify that slave is up and running
-        SHOW SLAVE STATUS;
-        OR
+        ```
+	SHOW SLAVE STATUS;
+	```
+        `OR`
+	```
         SHOW SLAVE STATUS\G;
-    - confirm that 'slave IO running' and 'slave SQL running' is set to 'yes'
+	```
+    - confirm that `slave IO running` and `slave SQL running` is set to `yes`
     - restart mysql service
-        sudo mysql service restart
+        ```
+	sudo mysql service restart
         sudo mysql service status
+	```
 
 ### Emmanuel Nwachukwu [<emmax0121@gmail.com>]
