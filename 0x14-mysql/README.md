@@ -141,8 +141,10 @@ exit
 
 ## Setting up the Master/Primary/web-01 - Slave/Replica/web-02
 - ensure that UFW is allowing connections on port 3306(MySql port) on both servers
+    ```
     sudo ufw allow 3306/tcp
     sud0 ufw status
+    ```
 - edit mysql config file
     sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
   - comment out the line "bind-address"
