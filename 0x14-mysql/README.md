@@ -188,11 +188,11 @@ exit
 	```
 
 	where
-        > MASTER_HOST='web-01 ipaddress'
-        > MASTER_USER='replica_user' from web-01
-        > MASTER_PASSWORD='1352' replica_user password
-        > MASTER_LOG_FILE='master-status-file'
-        > MASTER_LOG_POS=master-status-position
+	> MASTER_HOST='web-01 ipaddress'
+	> MASTER_USER='replica_user' from web-01
+	> MASTER_PASSWORD='1352' replica_user password
+	> MASTER_LOG_FILE='master-status-file'
+	> MASTER_LOG_POS=master-status-position
 
     - start slave mysql
         ```
