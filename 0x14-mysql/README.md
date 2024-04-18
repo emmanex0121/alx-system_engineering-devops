@@ -46,73 +46,71 @@ sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engin
 	mysql -u root -p
 	```
 - Creates user and assign a password
-```
-CREATE USER 'user_name'@'host_name' IDENTIFIED BY 'password';
-```
-`Grants user permission to check primary/replica status of databases`
-```
-GRANT REPLICATION CLIENT ON *.* TO 'user_name'@'host_name';
-```
-`commit changes, apply and exit`
-```
-FLUSH PRIVILEGES;
-```
-```
-exit
-```
-`Check status and priviledges of newly created user using the new user`
-```
-mysql -u user_name -p -e "SHOW GRANTS FOR 'user_name'@'localhost'"
-```
+	```
+	CREATE USER 'user_name'@'host_name' IDENTIFIED BY 'password';
+	```
+- Grants user permission to check primary/replica status of databases
+	```
+	GRANT REPLICATION CLIENT ON *.* TO 'user_name'@'host_name';
+	```
+- commit changes, apply and exit
+	```
+	FLUSH PRIVILEGES;
+	exit
+	```
+- Check status and priviledges of newly created user using the new user
+	```
+	mysql -u user_name -p -e "SHOW GRANTS FOR 'user_name'@'localhost'"
+	```
 
 
-`Common mysql commands`
-```
-SELECT User, Host FROM mysql.user;
-SHOW DATABASES;
-SHOW TABLES;
-SELECT * FROM table_name;
-```
+## Imprtant and Common mysql commands
+	```
+	SELECT User, Host FROM mysql.user;
+	SHOW DATABASES;
+	SHOW TABLES;
+	SELECT * FROM table_name;
+	```
+- Creates and selects a database
+	```
+	CREATE DATABASE IF NOT EXIXTS database_name;
+	USE database_name;
+	```
 
-```
-CREATE DATABASE IF NOT EXIXTS database_name;
-USE database_name;
-```
+- Creates a table and adds two rows
+	```
+	CREATE TABLE IF NOT EXISTS table_name (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255) NOT NULL
+	);
+	```
 
-`creates a table and adds two rows`
-```
-CREATE TABLE IF NOT EXISTS table_name (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
-    );
-```
+- Inserting using column list
+	```
+	INSERT INTO table_name (name) VALUES ('Phoenix');
+	```
+- Inserting using column order and id position as defined in table`
+	```
+	INSERT INTO table_name VALUES (1, 'Phoenix');
+	```
 
-`inserting using column list`
-```
-INSERT INTO table_name (name) VALUES ('Phoenix');
-```
-`inserting using column order and id position as defined in table`
-```
-INSERT INTO table_name VALUES (1, 'Phoenix');
-```
+- Grants SELECT privilege on table_name to specified user
+	```
+	GRANT SELECT ON database_name.table_name TO 'user_name'@'host_name';
+	```
+- Grants replica_user ability to duplicate primary MySQL server
+	```
+	GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+	```
 
-`Grants SELECT privilege on table_name to specified user`
-```
-GRANT SELECT ON database_name.table_name TO 'user_name'@'host_name';
-```
-`Grants replica_user ability to duplicate primary MySQL server`
-```
-GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
-```
-
-`allows holberton_user to view MySQL user table`
-```
-GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
-```
-```
-FLUSH PRIVILEGES;
-exit
-```
+- Allows holberton_user to view MySQL user table
+	```
+	GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+	```
+	```
+	FLUSH PRIVILEGES;
+	exit
+	```
 
 
 
