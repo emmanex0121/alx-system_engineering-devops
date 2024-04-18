@@ -135,30 +135,32 @@ exit
 	GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
 	```
 - Grant holberton_user ability to view mysql.user table to view users and their permissions
-```
-GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
-```
+	```
+	GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+	```
 
-# Setting up the Master/Primary/web-01 - Slave/Replica/web-02
-# ensure that UFW is allowing connections on port 3306(MySql port) on both servers
+## Setting up the Master/Primary/web-01 - Slave/Replica/web-02
+- ensure that UFW is allowing connections on port 3306(MySql port) on both servers
     sudo ufw allow 3306/tcp
     sud0 ufw status
-# edit mysql config file
-sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
- - comment out the line bind-address
- - add this lines 
+- edit mysql config file
+    sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+  - comment out the line "bind-address"
+  - add this lines:
     "log_bin = /var/log/mysql/mysql-bin.log"
     "server-id = 1"
     "binlog_do_db = tyrell_corp"
-# restart mysql service
+- restart mysql service
     sudo service mysql restart
     sudo service mysql status
-# login MySql to retrieve binary log file name and position on web-01
-    SHOW MASTER STATUS;
+- login MySql to retrieve binary log file name and position on web-01
+    ```
+    SHOW MASTER STATUS; # Which is file: mysql-bin.000002, position: 154
+    ```
     - Which is file: mysql-bin.000002, position: 154
 
-# login to web-02/replica server
-# Open mysql config file
+## login to web-02/replica server
+## Open mysql config file
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
     - comment out bind-address
     - add lines
