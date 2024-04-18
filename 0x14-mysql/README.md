@@ -148,7 +148,9 @@ exit
   - comment out the line "bind-address"
   - add this lines:
     > "log_bin = /var/log/mysql/mysql-bin.log"
+
     > "server-id = 1"
+
     > "binlog_do_db = tyrell_corp"
 - restart mysql service
     ```
