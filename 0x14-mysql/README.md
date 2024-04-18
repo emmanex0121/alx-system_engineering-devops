@@ -147,17 +147,18 @@ exit
     sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
   - comment out the line "bind-address"
   - add this lines:
-    "log_bin = /var/log/mysql/mysql-bin.log"
-    "server-id = 1"
-    "binlog_do_db = tyrell_corp"
+    > "log_bin = /var/log/mysql/mysql-bin.log"
+    > "server-id = 1"
+    > "binlog_do_db = tyrell_corp"
 - restart mysql service
+    ```
     sudo service mysql restart
     sudo service mysql status
+    ```
 - login MySql to retrieve binary log file name and position on web-01
     ```
     SHOW MASTER STATUS; # Which is file: mysql-bin.000002, position: 154
     ```
-    - Which is file: mysql-bin.000002, position: 154
 
 ## login to web-02/replica server
 ## Open mysql config file
