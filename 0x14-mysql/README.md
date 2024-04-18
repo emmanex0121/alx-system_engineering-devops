@@ -149,9 +149,9 @@ exit
   - add this lines without the quotes:
     > "log_bin = /var/log/mysql/mysql-bin.log"
 
-      "server-id = 1"
+    > "server-id = 1"
 
-      "binlog_do_db = tyrell_corp"
+    >  "binlog_do_db = tyrell_corp"
 - restart mysql service
     ```
     sudo service mysql restart
