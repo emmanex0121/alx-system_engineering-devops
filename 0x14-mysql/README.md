@@ -66,10 +66,10 @@ sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engin
 
 ## Imprtant and Common mysql commands
 	```
-	SELECT User, Host FROM mysql.user;
-	SHOW DATABASES;
-	SHOW TABLES;
-	SELECT * FROM table_name;
+	SELECT User, Host FROM mysql.user;	# Shows a list of MySql users
+	SHOW DATABASES;				# Shows a list of databases
+	SHOW TABLES;				# Shows a list of tables in the seleceted DB
+	SELECT * FROM table_name;		# Lists all records in a specified table
 	```
 - Creates and selects a database
 	```
