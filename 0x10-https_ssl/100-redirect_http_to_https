@@ -29,17 +29,17 @@ defaults
 frontend phxkheed-frontend-http
     mode http
     bind *:80
-    bind *:443 ssl crt /etc/haproxy/certs/phxkheed.tech.pem
     http-request redirect scheme https code 301 unless { ssl_fc }
     http-request set-header X-Forwarded-Proto http
     default_backend phxkheed-backend
 
 frontend phxkheed-frontend-https
-    bind *:443 ssl crt /etc/haproxy/certs/phxkheed.tech.pem
+    # bind *:443 ssl crt /etc/haproxy/certs/phxkheed.tech.pem
+    bind *:443 ssl crt /etc/haproxy/certs/www.phxkheed.tech.pem
     http-request set-header X-Forwarded-Proto https
     default_backend phxkheed-backend
 
 backend phxkheed-backend
     balance roundrobin
-    server 142286-web-01 54.196.42.238:80 check
-    server 142286-web-02 54.173.184.128:80 check~                                               
+    server 142286-web-01 100.25.16.150:80 check
+    server 142286-web-02 54.173.184.128:80 check
