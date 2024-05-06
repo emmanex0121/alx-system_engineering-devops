@@ -1,5 +1,4 @@
 # My First Postmortem
-
 Emmanuel Nwachukwu
 
 ## Outage Summary
@@ -41,4 +40,4 @@ Got a replacement server from alx and had to re configure and setup everything f
 	- However in this case, the only corrective measure is to prevent that port from being unreachable, else a new web server will need to be configured. 
 
 
-### Emmanuel NWachuku - [<emmax0121@gmail.com>]
+### Emmanuel Nwachuku - [<emmax0121@gmail.com>] [Github](https://github.com/emmanex0121) / [Twitter](https://twitter.com/PHXKHEED)
