@@ -1,4 +1,5 @@
 # My First Postmortem
+
 Emmanuel Nwachukwu
 
 ## Outage Summary
@@ -29,13 +30,15 @@ Got a replacement server from alx and had to re configure and setup everything f
 - Updated the ip address of the web server on the load balancer to correctly redirect incoming requests to this new server and not the old one.
 
 ## Corrective and preventive measures
-- Preventive Measures
+- **Preventive Measures**
 	- Always ensure that your ssh port is always open
- - Always ensure that ssh port of the server is never in use by another process
-Check that the ssh port is not blocked out of incoming transmission by firewall.
-Always check that there’s no hindrance to your server’s ssh port before logging off.
+	- Always ensure that ssh port of the server is never in use by another process
+	- Check that the ssh port is not blocked out of incoming transmission by firewall.
+	- Always check that there’s no hindrance to your server’s ssh port before logging off.
 
-Corrective Measures
-The only corrective measure is to reach out to the admin to help restore ssh connection on the server
-However in this case, the only corrective measure is to prevent that port from being unreachable, else a new web server will need to be configured. 
+- **Corrective Measures**
+	- The only corrective measure is to reach out to the admin to help restore ssh connection on the server
+	- However in this case, the only corrective measure is to prevent that port from being unreachable, else a new web server will need to be configured. 
 
+
+### Emmanuel NWachuku - [<emmax0121@gmail.com>]
