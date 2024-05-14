@@ -1,4 +1,7 @@
-location / {
-                #include proxy_params;
-                proxy_pass http://0.0.00:5000;
+location /airbnb-onepage {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5000;
+
+                # This would also work
+                # proxy_pass http://0.0.0.0:5000/airbnb-onepage;
         }
