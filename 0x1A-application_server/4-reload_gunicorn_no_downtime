@@ -7,6 +7,7 @@ if sudo systemctl is-active --quiet $SERVICE_NAME; then
     echo "Reloading $SERVICE_NAME gracefully..."
 
     # Get the PID of the master Gunicorn process
+    # MASTER_PID=$(pgrep gunicorn | head -1
     MASTER_PID=$(sudo systemctl show -p MainPID --value $SERVICE_NAME)
 
     # Reload the Gunicorn service using hot reload
