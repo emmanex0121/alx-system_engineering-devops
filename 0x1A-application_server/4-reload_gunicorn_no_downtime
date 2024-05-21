@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Gracefully restarts gunicorn
 
 SERVICE_NAME="gunicorn.service"
 
