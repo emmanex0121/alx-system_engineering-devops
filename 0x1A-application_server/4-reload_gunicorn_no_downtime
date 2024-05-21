@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Gracefully restarts gunicorn
 
-SERVICE_NAME="gunicorn.service"
+SERVICE_NAME="gunicorn"
 
 # Check if the service is active
 if sudo systemctl is-active --quiet $SERVICE_NAME; then
