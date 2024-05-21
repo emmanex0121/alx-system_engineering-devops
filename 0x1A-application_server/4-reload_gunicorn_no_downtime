@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Gracefully restarts gunicorn
 
-SERVICE_NAME="gunicorn"
+SERVICE_NAME="gunicorn.service"
 
 # Check if the service is active
 echo "Checking if $SERVICE_NAME is active..."
