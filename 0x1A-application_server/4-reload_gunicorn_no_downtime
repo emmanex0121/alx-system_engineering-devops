@@ -20,14 +20,4 @@ if sudo systemctl is-active --quiet $SERVICE_NAME; then
     else
         echo "Failed to reload $SERVICE_NAME"
     fi
-else
-    echo "$SERVICE_NAME is not active. Starting it..."
-    sudo systemctl start $SERVICE_NAME
-
-    # Check if the start was successful
-    if sudo systemctl is-active --quiet $SERVICE_NAME; then
-        echo "$SERVICE_NAME started successfully"
-    else
-        echo "Failed to start $SERVICE_NAME"
-    fi
 fi
