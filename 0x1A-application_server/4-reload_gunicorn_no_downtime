@@ -4,7 +4,14 @@
 SERVICE_NAME="gunicorn"
 
 # Check if the service is active
-if sudo systemctl is-active --quiet $SERVICE_NAME; then
+echo "Checking if $SERVICE_NAME is active..."
+sudo systemctl is-active --quiet $SERVICE_NAME
+STATUS=$?
+echo "Status code: $STATUS"
+
+# Check if the service is active
+# if sudo systemctl is-active --quiet $SERVICE_NAME; then
+if [ $STATUS -eq 0]; then
     echo "Reloading $SERVICE_NAME gracefully..."
 
     # Get the PID of the master Gunicorn process
@@ -19,5 +26,15 @@ if sudo systemctl is-active --quiet $SERVICE_NAME; then
         echo "$SERVICE_NAME reloaded gracefully"
     else
         echo "Failed to reload $SERVICE_NAME"
+    fi
+else
+    echo "$SERVICE_NAME is not active. Starting it..."
+    sudo systemctl start $SERVICE_NAME
+
+    # Check if the start was successful
+    if sudo systemctl is-active --quiet $SERVICE_NAME; then
+        echo "$SERVICE_NAME started successfully"
+    else
+        echo "Failed to start $SERVICE_NAME"
     fi
 fi
