@@ -12,7 +12,7 @@ if sudo systemctl is-active --quiet $SERVICE_NAME; then
     MASTER_PID=$(sudo systemctl show -p MainPID --value $SERVICE_NAME)
 
     # Reload the Gunicorn service using hot reload
-    sudo kill -s HUP $MASTER_PID
+    sudo kill -s HUP "$MASTER_PID"
 
     # Check if the reload was successful
     if sudo systemctl is-active --quiet $SERVICE_NAME; then
