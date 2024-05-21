@@ -5,7 +5,7 @@ SERVICE_NAME="gunicorn"
 
 # Check if the service is active
 echo "Checking if $SERVICE_NAME is active..."
-sudo systemctl is-active --quiet $SERVICE_NAME
+systemctl is-active --quiet $SERVICE_NAME
 STATUS=$?
 echo "Status code: $STATUS"
 
