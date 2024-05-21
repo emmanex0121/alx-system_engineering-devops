@@ -11,7 +11,7 @@ echo "Status code: $STATUS"
 
 # Check if the service is active
 # if sudo systemctl is-active --quiet $SERVICE_NAME; then
-if [ $STATUS -eq 0]; then
+if [ $STATUS -eq 0 ]; then
     echo "Reloading $SERVICE_NAME gracefully..."
 
     # Get the PID of the master Gunicorn process
